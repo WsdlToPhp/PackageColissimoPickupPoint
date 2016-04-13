@@ -1,11 +1,11 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/WsdlToPhp/PackageColissimoPickupPoint/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/WsdlToPhp/PackageColissimoPickupPoint/?branch=develop)
 [![Latest Stable Version](https://poser.pugx.org/wsdltophp/package-colissimo-pickup-point/v/stable)](https://packagist.org/packages/wsdltophp/package-colissimo-pickup-point)
-[![Dependency Status](https://www.versioneye.com/user/projects/570df28ffcd19a0039f16b4c/badge.svg?style=flat)](https://www.versioneye.com/user/projects/570df28ffcd19a0039f16b4c)
-[![StyleCI](https://styleci.io/repos/56129051/shield)](https://styleci.io/repos/56129051)
+[![Dependency Status](https://www.versioneye.com/user/projects/570e03c2fcd19a0045440bfe/badge.svg?style=flat)](https://www.versioneye.com/user/projects/570e03c2fcd19a0045440bfe)
+[![StyleCI](https://styleci.io/repos/56134458/shield)](https://styleci.io/repos/56134458)
 [![Total Downloads](https://poser.pugx.org/wsdltophp/package-colissimo-pickup-point/downloads)](https://packagist.org/packages/wsdltophp/package-colissimo-pickup-point)
 
 # PackageColissimoPickupPoint
-This package has been generated from the [Colissimo PickupPoint Web Services](https://ws.colissimo.fr/sls-ws/SlsServiceWS?wsdl) WSDL using the [PackageGenerator](https://github.com/WsdlToPhp/PackageGenerator) project.
+This package has been generated from the [Colissimo PickupPoint Web Services](https://ws.colissimo.fr/pointretrait-ws-cxf/PointRetraitServiceWS/2.0?wsdl) WSDL using the [PackageGenerator](https://github.com/WsdlToPhp/PackageGenerator) project.
 
 # Summary
 - [Generating again the package](#generating-again-the-package)
