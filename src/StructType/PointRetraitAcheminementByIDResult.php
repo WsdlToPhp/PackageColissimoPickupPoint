@@ -62,8 +62,8 @@ class PointRetraitAcheminementByIDResult extends AbstractStructBase
     public function setErrorCode($errorCode = null)
     {
         // validation for constraint: int
-        if (!is_null($errorCode) && !is_int($errorCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide an int, "%s" given', gettype($errorCode)), __LINE__);
+        if (!is_null($errorCode) && !is_numeric($errorCode)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($errorCode)), __LINE__);
         }
         $this->errorCode = $errorCode;
         return $this;

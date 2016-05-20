@@ -652,8 +652,8 @@ class PointRetrait extends AbstractStructBase
     public function setDistanceEnMetre($distanceEnMetre = null)
     {
         // validation for constraint: int
-        if (!is_null($distanceEnMetre) && !is_int($distanceEnMetre)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide an int, "%s" given', gettype($distanceEnMetre)), __LINE__);
+        if (!is_null($distanceEnMetre) && !is_numeric($distanceEnMetre)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($distanceEnMetre)), __LINE__);
         }
         $this->distanceEnMetre = $distanceEnMetre;
         return $this;
@@ -1009,8 +1009,8 @@ class PointRetrait extends AbstractStructBase
     public function setPoidsMaxi($poidsMaxi = null)
     {
         // validation for constraint: int
-        if (!is_null($poidsMaxi) && !is_int($poidsMaxi)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide an int, "%s" given', gettype($poidsMaxi)), __LINE__);
+        if (!is_null($poidsMaxi) && !is_numeric($poidsMaxi)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($poidsMaxi)), __LINE__);
         }
         $this->poidsMaxi = $poidsMaxi;
         return $this;
