@@ -106,8 +106,8 @@ class Conges extends AbstractStructBase
     public function setNumero($numero = null)
     {
         // validation for constraint: int
-        if (!is_null($numero) && !is_int($numero)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide an int, "%s" given', gettype($numero)), __LINE__);
+        if (!is_null($numero) && !is_numeric($numero)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($numero)), __LINE__);
         }
         $this->numero = $numero;
         return $this;
