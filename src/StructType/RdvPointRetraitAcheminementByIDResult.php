@@ -41,6 +41,10 @@ class RdvPointRetraitAcheminementByIDResult extends PointRetraitAcheminementByID
      */
     public function setRdv($rdv = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($rdv) && !is_bool($rdv)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($rdv)), __LINE__);
+        }
         $this->rdv = $rdv;
         return $this;
     }

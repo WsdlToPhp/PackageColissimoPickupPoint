@@ -18,6 +18,7 @@ php wsdltophp.phar generate:package \
     --urlorpath="https://ws.colissimo.fr/pointretrait-ws-cxf/PointRetraitServiceWS/2.0?wsdl" \
     --destination=$DEST \
     --composer-name="wsdltophp/package-colissimo-pickup-point" \
+    --composer-settings="autoload.psr-4.SoapClient\:./SoapClient/" \
     --addcomments="author:WsdlToPhp <contact@wsdltophp.com>" \
     --soapclient="\SoapClient\SoapClientBase" \
     --namespace="ColissimoPickupPoint";
@@ -27,6 +28,7 @@ php wsdltophp.phar generate:package \
     --urlorpath="https://ws.colissimo.fr/pointretrait-ws-cxf/PointRetraitServiceWS/2.0?wsdl" \
     --destination=$DEST \
     --composer-name="wsdltophp/package-colissimo-pickup-point" \
+    --composer-settings="autoload.psr-4.SoapClient\:./SoapClient/" \
     --addcomments="author:WsdlToPhp <contact@wsdltophp.com>" \
     --soapclient="\SoapClient\SoapClientBase" \
     --namespace="ColissimoPickupPoint" \

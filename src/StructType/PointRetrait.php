@@ -407,6 +407,10 @@ class PointRetrait extends AbstractStructBase
      */
     public function setLoanOfHandlingTool($loanOfHandlingTool = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($loanOfHandlingTool) && !is_bool($loanOfHandlingTool)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($loanOfHandlingTool)), __LINE__);
+        }
         $this->loanOfHandlingTool = $loanOfHandlingTool;
         return $this;
     }
@@ -425,6 +429,10 @@ class PointRetrait extends AbstractStructBase
      */
     public function setParking($parking = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($parking) && !is_bool($parking)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($parking)), __LINE__);
+        }
         $this->parking = $parking;
         return $this;
     }
@@ -465,6 +473,10 @@ class PointRetrait extends AbstractStructBase
      */
     public function setAccesPersonneMobiliteReduite($accesPersonneMobiliteReduite = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($accesPersonneMobiliteReduite) && !is_bool($accesPersonneMobiliteReduite)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($accesPersonneMobiliteReduite)), __LINE__);
+        }
         $this->accesPersonneMobiliteReduite = $accesPersonneMobiliteReduite;
         return $this;
     }
@@ -571,6 +583,10 @@ class PointRetrait extends AbstractStructBase
      */
     public function setCongesPartiel($congesPartiel = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($congesPartiel) && !is_bool($congesPartiel)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($congesPartiel)), __LINE__);
+        }
         $this->congesPartiel = $congesPartiel;
         return $this;
     }
@@ -589,6 +605,10 @@ class PointRetrait extends AbstractStructBase
      */
     public function setCongesTotal($congesTotal = null)
     {
+        // validation for constraint: boolean
+        if (!is_null($congesTotal) && !is_bool($congesTotal)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($congesTotal)), __LINE__);
+        }
         $this->congesTotal = $congesTotal;
         return $this;
     }
