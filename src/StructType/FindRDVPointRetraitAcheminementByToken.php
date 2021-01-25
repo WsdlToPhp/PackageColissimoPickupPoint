@@ -5,114 +5,105 @@ namespace ColissimoPickupPoint\StructType;
 use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
- * This class stands for findInternalRDVPointRetraitAcheminement StructType
- * Meta informations extracted from the WSDL
- * - type: tns:findInternalRDVPointRetraitAcheminement
+ * This class stands for findRDVPointRetraitAcheminementByToken StructType
+ * Meta information extracted from the WSDL
+ * - type: tns:findRDVPointRetraitAcheminementByToken
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class FindInternalRDVPointRetraitAcheminement extends AbstractStructBase
+class FindRDVPointRetraitAcheminementByToken extends AbstractStructBase
 {
     /**
-     * The accountNumber
-     * Meta informations extracted from the WSDL
+     * The token
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
-    public $accountNumber;
-    /**
-     * The password
-     * Meta informations extracted from the WSDL
-     * - minOccurs: 0
-     * @var string
-     */
-    public $password;
+    public $token;
     /**
      * The address
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $address;
     /**
      * The zipCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $zipCode;
     /**
      * The city
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $city;
     /**
      * The countryCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $countryCode;
     /**
      * The weight
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $weight;
     /**
      * The shippingDate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $shippingDate;
     /**
      * The filterRelay
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $filterRelay;
     /**
      * The requestId
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $requestId;
     /**
      * The lang
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $lang;
     /**
      * The optionInter
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $optionInter;
     /**
-     * Constructor method for findInternalRDVPointRetraitAcheminement
-     * @uses FindInternalRDVPointRetraitAcheminement::setAccountNumber()
-     * @uses FindInternalRDVPointRetraitAcheminement::setPassword()
-     * @uses FindInternalRDVPointRetraitAcheminement::setAddress()
-     * @uses FindInternalRDVPointRetraitAcheminement::setZipCode()
-     * @uses FindInternalRDVPointRetraitAcheminement::setCity()
-     * @uses FindInternalRDVPointRetraitAcheminement::setCountryCode()
-     * @uses FindInternalRDVPointRetraitAcheminement::setWeight()
-     * @uses FindInternalRDVPointRetraitAcheminement::setShippingDate()
-     * @uses FindInternalRDVPointRetraitAcheminement::setFilterRelay()
-     * @uses FindInternalRDVPointRetraitAcheminement::setRequestId()
-     * @uses FindInternalRDVPointRetraitAcheminement::setLang()
-     * @uses FindInternalRDVPointRetraitAcheminement::setOptionInter()
-     * @param string $accountNumber
-     * @param string $password
+     * Constructor method for findRDVPointRetraitAcheminementByToken
+     * @uses FindRDVPointRetraitAcheminementByToken::setToken()
+     * @uses FindRDVPointRetraitAcheminementByToken::setAddress()
+     * @uses FindRDVPointRetraitAcheminementByToken::setZipCode()
+     * @uses FindRDVPointRetraitAcheminementByToken::setCity()
+     * @uses FindRDVPointRetraitAcheminementByToken::setCountryCode()
+     * @uses FindRDVPointRetraitAcheminementByToken::setWeight()
+     * @uses FindRDVPointRetraitAcheminementByToken::setShippingDate()
+     * @uses FindRDVPointRetraitAcheminementByToken::setFilterRelay()
+     * @uses FindRDVPointRetraitAcheminementByToken::setRequestId()
+     * @uses FindRDVPointRetraitAcheminementByToken::setLang()
+     * @uses FindRDVPointRetraitAcheminementByToken::setOptionInter()
+     * @param string $token
      * @param string $address
      * @param string $zipCode
      * @param string $city
@@ -124,11 +115,10 @@ class FindInternalRDVPointRetraitAcheminement extends AbstractStructBase
      * @param string $lang
      * @param string $optionInter
      */
-    public function __construct($accountNumber = null, $password = null, $address = null, $zipCode = null, $city = null, $countryCode = null, $weight = null, $shippingDate = null, $filterRelay = null, $requestId = null, $lang = null, $optionInter = null)
+    public function __construct($token = null, $address = null, $zipCode = null, $city = null, $countryCode = null, $weight = null, $shippingDate = null, $filterRelay = null, $requestId = null, $lang = null, $optionInter = null)
     {
         $this
-            ->setAccountNumber($accountNumber)
-            ->setPassword($password)
+            ->setToken($token)
             ->setAddress($address)
             ->setZipCode($zipCode)
             ->setCity($city)
@@ -141,47 +131,25 @@ class FindInternalRDVPointRetraitAcheminement extends AbstractStructBase
             ->setOptionInter($optionInter);
     }
     /**
-     * Get accountNumber value
+     * Get token value
      * @return string|null
      */
-    public function getAccountNumber()
+    public function getToken()
     {
-        return $this->accountNumber;
+        return $this->token;
     }
     /**
-     * Set accountNumber value
-     * @param string $accountNumber
-     * @return \ColissimoPickupPoint\StructType\FindInternalRDVPointRetraitAcheminement
+     * Set token value
+     * @param string $token
+     * @return \ColissimoPickupPoint\StructType\FindRDVPointRetraitAcheminementByToken
      */
-    public function setAccountNumber($accountNumber = null)
+    public function setToken($token = null)
     {
         // validation for constraint: string
-        if (!is_null($accountNumber) && !is_string($accountNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($accountNumber)), __LINE__);
+        if (!is_null($token) && !is_string($token)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($token, true), gettype($token)), __LINE__);
         }
-        $this->accountNumber = $accountNumber;
-        return $this;
-    }
-    /**
-     * Get password value
-     * @return string|null
-     */
-    public function getPassword()
-    {
-        return $this->password;
-    }
-    /**
-     * Set password value
-     * @param string $password
-     * @return \ColissimoPickupPoint\StructType\FindInternalRDVPointRetraitAcheminement
-     */
-    public function setPassword($password = null)
-    {
-        // validation for constraint: string
-        if (!is_null($password) && !is_string($password)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($password)), __LINE__);
-        }
-        $this->password = $password;
+        $this->token = $token;
         return $this;
     }
     /**
@@ -195,13 +163,13 @@ class FindInternalRDVPointRetraitAcheminement extends AbstractStructBase
     /**
      * Set address value
      * @param string $address
-     * @return \ColissimoPickupPoint\StructType\FindInternalRDVPointRetraitAcheminement
+     * @return \ColissimoPickupPoint\StructType\FindRDVPointRetraitAcheminementByToken
      */
     public function setAddress($address = null)
     {
         // validation for constraint: string
         if (!is_null($address) && !is_string($address)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($address)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($address, true), gettype($address)), __LINE__);
         }
         $this->address = $address;
         return $this;
@@ -217,13 +185,13 @@ class FindInternalRDVPointRetraitAcheminement extends AbstractStructBase
     /**
      * Set zipCode value
      * @param string $zipCode
-     * @return \ColissimoPickupPoint\StructType\FindInternalRDVPointRetraitAcheminement
+     * @return \ColissimoPickupPoint\StructType\FindRDVPointRetraitAcheminementByToken
      */
     public function setZipCode($zipCode = null)
     {
         // validation for constraint: string
         if (!is_null($zipCode) && !is_string($zipCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($zipCode)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($zipCode, true), gettype($zipCode)), __LINE__);
         }
         $this->zipCode = $zipCode;
         return $this;
@@ -239,13 +207,13 @@ class FindInternalRDVPointRetraitAcheminement extends AbstractStructBase
     /**
      * Set city value
      * @param string $city
-     * @return \ColissimoPickupPoint\StructType\FindInternalRDVPointRetraitAcheminement
+     * @return \ColissimoPickupPoint\StructType\FindRDVPointRetraitAcheminementByToken
      */
     public function setCity($city = null)
     {
         // validation for constraint: string
         if (!is_null($city) && !is_string($city)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($city)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($city, true), gettype($city)), __LINE__);
         }
         $this->city = $city;
         return $this;
@@ -261,13 +229,13 @@ class FindInternalRDVPointRetraitAcheminement extends AbstractStructBase
     /**
      * Set countryCode value
      * @param string $countryCode
-     * @return \ColissimoPickupPoint\StructType\FindInternalRDVPointRetraitAcheminement
+     * @return \ColissimoPickupPoint\StructType\FindRDVPointRetraitAcheminementByToken
      */
     public function setCountryCode($countryCode = null)
     {
         // validation for constraint: string
         if (!is_null($countryCode) && !is_string($countryCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($countryCode)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($countryCode, true), gettype($countryCode)), __LINE__);
         }
         $this->countryCode = $countryCode;
         return $this;
@@ -283,13 +251,13 @@ class FindInternalRDVPointRetraitAcheminement extends AbstractStructBase
     /**
      * Set weight value
      * @param string $weight
-     * @return \ColissimoPickupPoint\StructType\FindInternalRDVPointRetraitAcheminement
+     * @return \ColissimoPickupPoint\StructType\FindRDVPointRetraitAcheminementByToken
      */
     public function setWeight($weight = null)
     {
         // validation for constraint: string
         if (!is_null($weight) && !is_string($weight)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($weight)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($weight, true), gettype($weight)), __LINE__);
         }
         $this->weight = $weight;
         return $this;
@@ -305,13 +273,13 @@ class FindInternalRDVPointRetraitAcheminement extends AbstractStructBase
     /**
      * Set shippingDate value
      * @param string $shippingDate
-     * @return \ColissimoPickupPoint\StructType\FindInternalRDVPointRetraitAcheminement
+     * @return \ColissimoPickupPoint\StructType\FindRDVPointRetraitAcheminementByToken
      */
     public function setShippingDate($shippingDate = null)
     {
         // validation for constraint: string
         if (!is_null($shippingDate) && !is_string($shippingDate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($shippingDate)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($shippingDate, true), gettype($shippingDate)), __LINE__);
         }
         $this->shippingDate = $shippingDate;
         return $this;
@@ -327,13 +295,13 @@ class FindInternalRDVPointRetraitAcheminement extends AbstractStructBase
     /**
      * Set filterRelay value
      * @param string $filterRelay
-     * @return \ColissimoPickupPoint\StructType\FindInternalRDVPointRetraitAcheminement
+     * @return \ColissimoPickupPoint\StructType\FindRDVPointRetraitAcheminementByToken
      */
     public function setFilterRelay($filterRelay = null)
     {
         // validation for constraint: string
         if (!is_null($filterRelay) && !is_string($filterRelay)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($filterRelay)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($filterRelay, true), gettype($filterRelay)), __LINE__);
         }
         $this->filterRelay = $filterRelay;
         return $this;
@@ -349,13 +317,13 @@ class FindInternalRDVPointRetraitAcheminement extends AbstractStructBase
     /**
      * Set requestId value
      * @param string $requestId
-     * @return \ColissimoPickupPoint\StructType\FindInternalRDVPointRetraitAcheminement
+     * @return \ColissimoPickupPoint\StructType\FindRDVPointRetraitAcheminementByToken
      */
     public function setRequestId($requestId = null)
     {
         // validation for constraint: string
         if (!is_null($requestId) && !is_string($requestId)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($requestId)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($requestId, true), gettype($requestId)), __LINE__);
         }
         $this->requestId = $requestId;
         return $this;
@@ -371,13 +339,13 @@ class FindInternalRDVPointRetraitAcheminement extends AbstractStructBase
     /**
      * Set lang value
      * @param string $lang
-     * @return \ColissimoPickupPoint\StructType\FindInternalRDVPointRetraitAcheminement
+     * @return \ColissimoPickupPoint\StructType\FindRDVPointRetraitAcheminementByToken
      */
     public function setLang($lang = null)
     {
         // validation for constraint: string
         if (!is_null($lang) && !is_string($lang)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($lang)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($lang, true), gettype($lang)), __LINE__);
         }
         $this->lang = $lang;
         return $this;
@@ -393,35 +361,15 @@ class FindInternalRDVPointRetraitAcheminement extends AbstractStructBase
     /**
      * Set optionInter value
      * @param string $optionInter
-     * @return \ColissimoPickupPoint\StructType\FindInternalRDVPointRetraitAcheminement
+     * @return \ColissimoPickupPoint\StructType\FindRDVPointRetraitAcheminementByToken
      */
     public function setOptionInter($optionInter = null)
     {
         // validation for constraint: string
         if (!is_null($optionInter) && !is_string($optionInter)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($optionInter)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($optionInter, true), gettype($optionInter)), __LINE__);
         }
         $this->optionInter = $optionInter;
         return $this;
-    }
-    /**
-     * Method called when an object has been exported with var_export() functions
-     * It allows to return an object instantiated with the values
-     * @see AbstractStructBase::__set_state()
-     * @uses AbstractStructBase::__set_state()
-     * @param array $array the exported values
-     * @return \ColissimoPickupPoint\StructType\FindInternalRDVPointRetraitAcheminement
-     */
-    public static function __set_state(array $array)
-    {
-        return parent::__set_state($array);
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

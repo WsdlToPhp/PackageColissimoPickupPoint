@@ -23,16 +23,12 @@ class ClassMap
             'rdvPointRetraitAcheminementResult' => '\\ColissimoPickupPoint\\StructType\\RdvPointRetraitAcheminementResult',
             'pointRetraitAcheminementResult' => '\\ColissimoPickupPoint\\StructType\\PointRetraitAcheminementResult',
             'pointRetraitAcheminement' => '\\ColissimoPickupPoint\\StructType\\PointRetraitAcheminement',
-            'findInternalPointRetraitAcheminementByID' => '\\ColissimoPickupPoint\\StructType\\FindInternalPointRetraitAcheminementByID',
-            'findInternalPointRetraitAcheminementByIDResponse' => '\\ColissimoPickupPoint\\StructType\\FindInternalPointRetraitAcheminementByIDResponse',
-            'pointRetraitAcheminementByIDResult' => '\\ColissimoPickupPoint\\StructType\\PointRetraitAcheminementByIDResult',
-            'findInternalRDVPointRetraitAcheminementByID' => '\\ColissimoPickupPoint\\StructType\\FindInternalRDVPointRetraitAcheminementByID',
-            'findInternalRDVPointRetraitAcheminementByIDResponse' => '\\ColissimoPickupPoint\\StructType\\FindInternalRDVPointRetraitAcheminementByIDResponse',
-            'rdvPointRetraitAcheminementByIDResult' => '\\ColissimoPickupPoint\\StructType\\RdvPointRetraitAcheminementByIDResult',
-            'findInternalRDVPointRetraitAcheminement' => '\\ColissimoPickupPoint\\StructType\\FindInternalRDVPointRetraitAcheminement',
-            'findInternalRDVPointRetraitAcheminementResponse' => '\\ColissimoPickupPoint\\StructType\\FindInternalRDVPointRetraitAcheminementResponse',
+            'findRDVPointRetraitAcheminementByToken' => '\\ColissimoPickupPoint\\StructType\\FindRDVPointRetraitAcheminementByToken',
+            'findRDVPointRetraitAcheminementByTokenResponse' => '\\ColissimoPickupPoint\\StructType\\FindRDVPointRetraitAcheminementByTokenResponse',
             'findPointRetraitAcheminementByID' => '\\ColissimoPickupPoint\\StructType\\FindPointRetraitAcheminementByID',
             'findPointRetraitAcheminementByIDResponse' => '\\ColissimoPickupPoint\\StructType\\FindPointRetraitAcheminementByIDResponse',
+            'pointRetraitAcheminementByIDResult' => '\\ColissimoPickupPoint\\StructType\\PointRetraitAcheminementByIDResult',
+            'Exception' => '\\ColissimoPickupPoint\\StructType\\Exception',
         );
     }
 }

@@ -13,21 +13,21 @@ class PointRetrait extends AbstractStructBase
 {
     /**
      * The codePays
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $codePays;
     /**
      * The langue
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $langue;
     /**
      * The libellePays
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
@@ -44,7 +44,7 @@ class PointRetrait extends AbstractStructBase
     public $parking;
     /**
      * The reseau
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
@@ -56,28 +56,28 @@ class PointRetrait extends AbstractStructBase
     public $accesPersonneMobiliteReduite;
     /**
      * The adresse1
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $adresse1;
     /**
      * The adresse2
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $adresse2;
     /**
      * The adresse3
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $adresse3;
     /**
      * The codePostal
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
@@ -94,14 +94,14 @@ class PointRetrait extends AbstractStructBase
     public $congesTotal;
     /**
      * The coordGeolocalisationLatitude
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $coordGeolocalisationLatitude;
     /**
      * The coordGeolocalisationLongitude
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
@@ -113,70 +113,70 @@ class PointRetrait extends AbstractStructBase
     public $distanceEnMetre;
     /**
      * The horairesOuvertureDimanche
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $horairesOuvertureDimanche;
     /**
      * The horairesOuvertureJeudi
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $horairesOuvertureJeudi;
     /**
      * The horairesOuvertureLundi
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $horairesOuvertureLundi;
     /**
      * The horairesOuvertureMardi
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $horairesOuvertureMardi;
     /**
      * The horairesOuvertureMercredi
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $horairesOuvertureMercredi;
     /**
      * The horairesOuvertureSamedi
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $horairesOuvertureSamedi;
     /**
      * The horairesOuvertureVendredi
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $horairesOuvertureVendredi;
     /**
      * The identifiant
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $identifiant;
     /**
      * The indiceDeLocalisation
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $indiceDeLocalisation;
     /**
      * The listeConges
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
      * - nillable: true
@@ -185,28 +185,28 @@ class PointRetrait extends AbstractStructBase
     public $listeConges;
     /**
      * The localite
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $localite;
     /**
      * The nom
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $nom;
     /**
      * The periodeActiviteHoraireDeb
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $periodeActiviteHoraireDeb;
     /**
      * The periodeActiviteHoraireFin
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
@@ -218,7 +218,7 @@ class PointRetrait extends AbstractStructBase
     public $poidsMaxi;
     /**
      * The typeDePoint
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
@@ -343,7 +343,7 @@ class PointRetrait extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($codePays) && !is_string($codePays)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($codePays)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($codePays, true), gettype($codePays)), __LINE__);
         }
         $this->codePays = $codePays;
         return $this;
@@ -365,7 +365,7 @@ class PointRetrait extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($langue) && !is_string($langue)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($langue)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($langue, true), gettype($langue)), __LINE__);
         }
         $this->langue = $langue;
         return $this;
@@ -387,7 +387,7 @@ class PointRetrait extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($libellePays) && !is_string($libellePays)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($libellePays)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($libellePays, true), gettype($libellePays)), __LINE__);
         }
         $this->libellePays = $libellePays;
         return $this;
@@ -409,7 +409,7 @@ class PointRetrait extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($loanOfHandlingTool) && !is_bool($loanOfHandlingTool)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($loanOfHandlingTool)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($loanOfHandlingTool, true), gettype($loanOfHandlingTool)), __LINE__);
         }
         $this->loanOfHandlingTool = $loanOfHandlingTool;
         return $this;
@@ -431,7 +431,7 @@ class PointRetrait extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($parking) && !is_bool($parking)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($parking)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($parking, true), gettype($parking)), __LINE__);
         }
         $this->parking = $parking;
         return $this;
@@ -453,7 +453,7 @@ class PointRetrait extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($reseau) && !is_string($reseau)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($reseau)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reseau, true), gettype($reseau)), __LINE__);
         }
         $this->reseau = $reseau;
         return $this;
@@ -475,7 +475,7 @@ class PointRetrait extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($accesPersonneMobiliteReduite) && !is_bool($accesPersonneMobiliteReduite)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($accesPersonneMobiliteReduite)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($accesPersonneMobiliteReduite, true), gettype($accesPersonneMobiliteReduite)), __LINE__);
         }
         $this->accesPersonneMobiliteReduite = $accesPersonneMobiliteReduite;
         return $this;
@@ -497,7 +497,7 @@ class PointRetrait extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($adresse1) && !is_string($adresse1)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($adresse1)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($adresse1, true), gettype($adresse1)), __LINE__);
         }
         $this->adresse1 = $adresse1;
         return $this;
@@ -519,7 +519,7 @@ class PointRetrait extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($adresse2) && !is_string($adresse2)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($adresse2)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($adresse2, true), gettype($adresse2)), __LINE__);
         }
         $this->adresse2 = $adresse2;
         return $this;
@@ -541,7 +541,7 @@ class PointRetrait extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($adresse3) && !is_string($adresse3)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($adresse3)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($adresse3, true), gettype($adresse3)), __LINE__);
         }
         $this->adresse3 = $adresse3;
         return $this;
@@ -563,7 +563,7 @@ class PointRetrait extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($codePostal) && !is_string($codePostal)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($codePostal)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($codePostal, true), gettype($codePostal)), __LINE__);
         }
         $this->codePostal = $codePostal;
         return $this;
@@ -585,7 +585,7 @@ class PointRetrait extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($congesPartiel) && !is_bool($congesPartiel)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($congesPartiel)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($congesPartiel, true), gettype($congesPartiel)), __LINE__);
         }
         $this->congesPartiel = $congesPartiel;
         return $this;
@@ -607,7 +607,7 @@ class PointRetrait extends AbstractStructBase
     {
         // validation for constraint: boolean
         if (!is_null($congesTotal) && !is_bool($congesTotal)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a bool, "%s" given', gettype($congesTotal)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($congesTotal, true), gettype($congesTotal)), __LINE__);
         }
         $this->congesTotal = $congesTotal;
         return $this;
@@ -629,7 +629,7 @@ class PointRetrait extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($coordGeolocalisationLatitude) && !is_string($coordGeolocalisationLatitude)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($coordGeolocalisationLatitude)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($coordGeolocalisationLatitude, true), gettype($coordGeolocalisationLatitude)), __LINE__);
         }
         $this->coordGeolocalisationLatitude = $coordGeolocalisationLatitude;
         return $this;
@@ -651,7 +651,7 @@ class PointRetrait extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($coordGeolocalisationLongitude) && !is_string($coordGeolocalisationLongitude)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($coordGeolocalisationLongitude)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($coordGeolocalisationLongitude, true), gettype($coordGeolocalisationLongitude)), __LINE__);
         }
         $this->coordGeolocalisationLongitude = $coordGeolocalisationLongitude;
         return $this;
@@ -672,8 +672,8 @@ class PointRetrait extends AbstractStructBase
     public function setDistanceEnMetre($distanceEnMetre = null)
     {
         // validation for constraint: int
-        if (!is_null($distanceEnMetre) && !is_numeric($distanceEnMetre)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($distanceEnMetre)), __LINE__);
+        if (!is_null($distanceEnMetre) && !(is_int($distanceEnMetre) || ctype_digit($distanceEnMetre))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($distanceEnMetre, true), gettype($distanceEnMetre)), __LINE__);
         }
         $this->distanceEnMetre = $distanceEnMetre;
         return $this;
@@ -695,7 +695,7 @@ class PointRetrait extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($horairesOuvertureDimanche) && !is_string($horairesOuvertureDimanche)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($horairesOuvertureDimanche)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($horairesOuvertureDimanche, true), gettype($horairesOuvertureDimanche)), __LINE__);
         }
         $this->horairesOuvertureDimanche = $horairesOuvertureDimanche;
         return $this;
@@ -717,7 +717,7 @@ class PointRetrait extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($horairesOuvertureJeudi) && !is_string($horairesOuvertureJeudi)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($horairesOuvertureJeudi)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($horairesOuvertureJeudi, true), gettype($horairesOuvertureJeudi)), __LINE__);
         }
         $this->horairesOuvertureJeudi = $horairesOuvertureJeudi;
         return $this;
@@ -739,7 +739,7 @@ class PointRetrait extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($horairesOuvertureLundi) && !is_string($horairesOuvertureLundi)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($horairesOuvertureLundi)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($horairesOuvertureLundi, true), gettype($horairesOuvertureLundi)), __LINE__);
         }
         $this->horairesOuvertureLundi = $horairesOuvertureLundi;
         return $this;
@@ -761,7 +761,7 @@ class PointRetrait extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($horairesOuvertureMardi) && !is_string($horairesOuvertureMardi)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($horairesOuvertureMardi)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($horairesOuvertureMardi, true), gettype($horairesOuvertureMardi)), __LINE__);
         }
         $this->horairesOuvertureMardi = $horairesOuvertureMardi;
         return $this;
@@ -783,7 +783,7 @@ class PointRetrait extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($horairesOuvertureMercredi) && !is_string($horairesOuvertureMercredi)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($horairesOuvertureMercredi)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($horairesOuvertureMercredi, true), gettype($horairesOuvertureMercredi)), __LINE__);
         }
         $this->horairesOuvertureMercredi = $horairesOuvertureMercredi;
         return $this;
@@ -805,7 +805,7 @@ class PointRetrait extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($horairesOuvertureSamedi) && !is_string($horairesOuvertureSamedi)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($horairesOuvertureSamedi)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($horairesOuvertureSamedi, true), gettype($horairesOuvertureSamedi)), __LINE__);
         }
         $this->horairesOuvertureSamedi = $horairesOuvertureSamedi;
         return $this;
@@ -827,7 +827,7 @@ class PointRetrait extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($horairesOuvertureVendredi) && !is_string($horairesOuvertureVendredi)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($horairesOuvertureVendredi)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($horairesOuvertureVendredi, true), gettype($horairesOuvertureVendredi)), __LINE__);
         }
         $this->horairesOuvertureVendredi = $horairesOuvertureVendredi;
         return $this;
@@ -849,7 +849,7 @@ class PointRetrait extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($identifiant) && !is_string($identifiant)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($identifiant)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($identifiant, true), gettype($identifiant)), __LINE__);
         }
         $this->identifiant = $identifiant;
         return $this;
@@ -871,7 +871,7 @@ class PointRetrait extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($indiceDeLocalisation) && !is_string($indiceDeLocalisation)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($indiceDeLocalisation)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($indiceDeLocalisation, true), gettype($indiceDeLocalisation)), __LINE__);
         }
         $this->indiceDeLocalisation = $indiceDeLocalisation;
         return $this;
@@ -888,6 +888,28 @@ class PointRetrait extends AbstractStructBase
         return isset($this->listeConges) ? $this->listeConges : null;
     }
     /**
+     * This method is responsible for validating the values passed to the setListeConges method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setListeConges method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateListeCongesForArrayConstraintsFromSetListeConges(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $pointRetraitListeCongesItem) {
+            // validation for constraint: itemType
+            if (!$pointRetraitListeCongesItem instanceof \ColissimoPickupPoint\StructType\Conges) {
+                $invalidValues[] = is_object($pointRetraitListeCongesItem) ? get_class($pointRetraitListeCongesItem) : sprintf('%s(%s)', gettype($pointRetraitListeCongesItem), var_export($pointRetraitListeCongesItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The listeConges property can only contain items of type \ColissimoPickupPoint\StructType\Conges, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set listeConges value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
@@ -897,11 +919,9 @@ class PointRetrait extends AbstractStructBase
      */
     public function setListeConges(array $listeConges = array())
     {
-        foreach ($listeConges as $pointRetraitListeCongesItem) {
-            // validation for constraint: itemType
-            if (!$pointRetraitListeCongesItem instanceof \ColissimoPickupPoint\StructType\Conges) {
-                throw new \InvalidArgumentException(sprintf('The listeConges property can only contain items of \ColissimoPickupPoint\StructType\Conges, "%s" given', is_object($pointRetraitListeCongesItem) ? get_class($pointRetraitListeCongesItem) : gettype($pointRetraitListeCongesItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($listeCongesArrayErrorMessage = self::validateListeCongesForArrayConstraintsFromSetListeConges($listeConges))) {
+            throw new \InvalidArgumentException($listeCongesArrayErrorMessage, __LINE__);
         }
         if (is_null($listeConges) || (is_array($listeConges) && empty($listeConges))) {
             unset($this->listeConges);
@@ -920,7 +940,7 @@ class PointRetrait extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \ColissimoPickupPoint\StructType\Conges) {
-            throw new \InvalidArgumentException(sprintf('The listeConges property can only contain items of \ColissimoPickupPoint\StructType\Conges, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The listeConges property can only contain items of type \ColissimoPickupPoint\StructType\Conges, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->listeConges[] = $item;
         return $this;
@@ -942,7 +962,7 @@ class PointRetrait extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($localite) && !is_string($localite)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($localite)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($localite, true), gettype($localite)), __LINE__);
         }
         $this->localite = $localite;
         return $this;
@@ -964,7 +984,7 @@ class PointRetrait extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($nom) && !is_string($nom)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($nom)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($nom, true), gettype($nom)), __LINE__);
         }
         $this->nom = $nom;
         return $this;
@@ -986,7 +1006,7 @@ class PointRetrait extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($periodeActiviteHoraireDeb) && !is_string($periodeActiviteHoraireDeb)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($periodeActiviteHoraireDeb)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($periodeActiviteHoraireDeb, true), gettype($periodeActiviteHoraireDeb)), __LINE__);
         }
         $this->periodeActiviteHoraireDeb = $periodeActiviteHoraireDeb;
         return $this;
@@ -1008,7 +1028,7 @@ class PointRetrait extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($periodeActiviteHoraireFin) && !is_string($periodeActiviteHoraireFin)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($periodeActiviteHoraireFin)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($periodeActiviteHoraireFin, true), gettype($periodeActiviteHoraireFin)), __LINE__);
         }
         $this->periodeActiviteHoraireFin = $periodeActiviteHoraireFin;
         return $this;
@@ -1029,8 +1049,8 @@ class PointRetrait extends AbstractStructBase
     public function setPoidsMaxi($poidsMaxi = null)
     {
         // validation for constraint: int
-        if (!is_null($poidsMaxi) && !is_numeric($poidsMaxi)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($poidsMaxi)), __LINE__);
+        if (!is_null($poidsMaxi) && !(is_int($poidsMaxi) || ctype_digit($poidsMaxi))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($poidsMaxi, true), gettype($poidsMaxi)), __LINE__);
         }
         $this->poidsMaxi = $poidsMaxi;
         return $this;
@@ -1052,29 +1072,9 @@ class PointRetrait extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($typeDePoint) && !is_string($typeDePoint)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($typeDePoint)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($typeDePoint, true), gettype($typeDePoint)), __LINE__);
         }
         $this->typeDePoint = $typeDePoint;
         return $this;
-    }
-    /**
-     * Method called when an object has been exported with var_export() functions
-     * It allows to return an object instantiated with the values
-     * @see AbstractStructBase::__set_state()
-     * @uses AbstractStructBase::__set_state()
-     * @param array $array the exported values
-     * @return \ColissimoPickupPoint\StructType\PointRetrait
-     */
-    public static function __set_state(array $array)
-    {
-        return parent::__set_state($array);
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

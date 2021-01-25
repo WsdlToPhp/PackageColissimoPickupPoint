@@ -18,14 +18,14 @@ class PointRetraitAcheminementResult extends AbstractStructBase
     public $errorCode;
     /**
      * The errorMessage
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $errorMessage;
     /**
      * The listePointRetraitAcheminement
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
      * - nillable: true
@@ -39,7 +39,7 @@ class PointRetraitAcheminementResult extends AbstractStructBase
     public $qualiteReponse;
     /**
      * The wsRequestId
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
@@ -82,8 +82,8 @@ class PointRetraitAcheminementResult extends AbstractStructBase
     public function setErrorCode($errorCode = null)
     {
         // validation for constraint: int
-        if (!is_null($errorCode) && !is_numeric($errorCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($errorCode)), __LINE__);
+        if (!is_null($errorCode) && !(is_int($errorCode) || ctype_digit($errorCode))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($errorCode, true), gettype($errorCode)), __LINE__);
         }
         $this->errorCode = $errorCode;
         return $this;
@@ -105,7 +105,7 @@ class PointRetraitAcheminementResult extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($errorMessage) && !is_string($errorMessage)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($errorMessage)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($errorMessage, true), gettype($errorMessage)), __LINE__);
         }
         $this->errorMessage = $errorMessage;
         return $this;
@@ -122,6 +122,28 @@ class PointRetraitAcheminementResult extends AbstractStructBase
         return isset($this->listePointRetraitAcheminement) ? $this->listePointRetraitAcheminement : null;
     }
     /**
+     * This method is responsible for validating the values passed to the setListePointRetraitAcheminement method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setListePointRetraitAcheminement method
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateListePointRetraitAcheminementForArrayConstraintsFromSetListePointRetraitAcheminement(array $values = array())
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach ($values as $pointRetraitAcheminementResultListePointRetraitAcheminementItem) {
+            // validation for constraint: itemType
+            if (!$pointRetraitAcheminementResultListePointRetraitAcheminementItem instanceof \ColissimoPickupPoint\StructType\PointRetraitAcheminement) {
+                $invalidValues[] = is_object($pointRetraitAcheminementResultListePointRetraitAcheminementItem) ? get_class($pointRetraitAcheminementResultListePointRetraitAcheminementItem) : sprintf('%s(%s)', gettype($pointRetraitAcheminementResultListePointRetraitAcheminementItem), var_export($pointRetraitAcheminementResultListePointRetraitAcheminementItem, true));
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('The listePointRetraitAcheminement property can only contain items of type \ColissimoPickupPoint\StructType\PointRetraitAcheminement, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+        }
+        unset($invalidValues);
+        return $message;
+    }
+    /**
      * Set listePointRetraitAcheminement value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
@@ -131,11 +153,9 @@ class PointRetraitAcheminementResult extends AbstractStructBase
      */
     public function setListePointRetraitAcheminement(array $listePointRetraitAcheminement = array())
     {
-        foreach ($listePointRetraitAcheminement as $pointRetraitAcheminementResultListePointRetraitAcheminementItem) {
-            // validation for constraint: itemType
-            if (!$pointRetraitAcheminementResultListePointRetraitAcheminementItem instanceof \ColissimoPickupPoint\StructType\PointRetraitAcheminement) {
-                throw new \InvalidArgumentException(sprintf('The listePointRetraitAcheminement property can only contain items of \ColissimoPickupPoint\StructType\PointRetraitAcheminement, "%s" given', is_object($pointRetraitAcheminementResultListePointRetraitAcheminementItem) ? get_class($pointRetraitAcheminementResultListePointRetraitAcheminementItem) : gettype($pointRetraitAcheminementResultListePointRetraitAcheminementItem)), __LINE__);
-            }
+        // validation for constraint: array
+        if ('' !== ($listePointRetraitAcheminementArrayErrorMessage = self::validateListePointRetraitAcheminementForArrayConstraintsFromSetListePointRetraitAcheminement($listePointRetraitAcheminement))) {
+            throw new \InvalidArgumentException($listePointRetraitAcheminementArrayErrorMessage, __LINE__);
         }
         if (is_null($listePointRetraitAcheminement) || (is_array($listePointRetraitAcheminement) && empty($listePointRetraitAcheminement))) {
             unset($this->listePointRetraitAcheminement);
@@ -154,7 +174,7 @@ class PointRetraitAcheminementResult extends AbstractStructBase
     {
         // validation for constraint: itemType
         if (!$item instanceof \ColissimoPickupPoint\StructType\PointRetraitAcheminement) {
-            throw new \InvalidArgumentException(sprintf('The listePointRetraitAcheminement property can only contain items of \ColissimoPickupPoint\StructType\PointRetraitAcheminement, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The listePointRetraitAcheminement property can only contain items of type \ColissimoPickupPoint\StructType\PointRetraitAcheminement, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->listePointRetraitAcheminement[] = $item;
         return $this;
@@ -175,8 +195,8 @@ class PointRetraitAcheminementResult extends AbstractStructBase
     public function setQualiteReponse($qualiteReponse = null)
     {
         // validation for constraint: int
-        if (!is_null($qualiteReponse) && !is_numeric($qualiteReponse)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($qualiteReponse)), __LINE__);
+        if (!is_null($qualiteReponse) && !(is_int($qualiteReponse) || ctype_digit($qualiteReponse))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($qualiteReponse, true), gettype($qualiteReponse)), __LINE__);
         }
         $this->qualiteReponse = $qualiteReponse;
         return $this;
@@ -198,29 +218,9 @@ class PointRetraitAcheminementResult extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($wsRequestId) && !is_string($wsRequestId)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($wsRequestId)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($wsRequestId, true), gettype($wsRequestId)), __LINE__);
         }
         $this->wsRequestId = $wsRequestId;
         return $this;
-    }
-    /**
-     * Method called when an object has been exported with var_export() functions
-     * It allows to return an object instantiated with the values
-     * @see AbstractStructBase::__set_state()
-     * @uses AbstractStructBase::__set_state()
-     * @param array $array the exported values
-     * @return \ColissimoPickupPoint\StructType\PointRetraitAcheminementResult
-     */
-    public static function __set_state(array $array)
-    {
-        return parent::__set_state($array);
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

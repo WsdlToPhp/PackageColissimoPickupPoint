@@ -13,14 +13,14 @@ class Conges extends AbstractStructBase
 {
     /**
      * The calendarDeDebut
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $calendarDeDebut;
     /**
      * The calendarDeFin
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
@@ -63,7 +63,7 @@ class Conges extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($calendarDeDebut) && !is_string($calendarDeDebut)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($calendarDeDebut)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($calendarDeDebut, true), gettype($calendarDeDebut)), __LINE__);
         }
         $this->calendarDeDebut = $calendarDeDebut;
         return $this;
@@ -85,7 +85,7 @@ class Conges extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($calendarDeFin) && !is_string($calendarDeFin)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($calendarDeFin)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($calendarDeFin, true), gettype($calendarDeFin)), __LINE__);
         }
         $this->calendarDeFin = $calendarDeFin;
         return $this;
@@ -106,30 +106,10 @@ class Conges extends AbstractStructBase
     public function setNumero($numero = null)
     {
         // validation for constraint: int
-        if (!is_null($numero) && !is_numeric($numero)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($numero)), __LINE__);
+        if (!is_null($numero) && !(is_int($numero) || ctype_digit($numero))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($numero, true), gettype($numero)), __LINE__);
         }
         $this->numero = $numero;
         return $this;
-    }
-    /**
-     * Method called when an object has been exported with var_export() functions
-     * It allows to return an object instantiated with the values
-     * @see AbstractStructBase::__set_state()
-     * @uses AbstractStructBase::__set_state()
-     * @param array $array the exported values
-     * @return \ColissimoPickupPoint\StructType\Conges
-     */
-    public static function __set_state(array $array)
-    {
-        return parent::__set_state($array);
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }
