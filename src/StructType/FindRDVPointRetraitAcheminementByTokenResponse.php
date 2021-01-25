@@ -5,13 +5,13 @@ namespace ColissimoPickupPoint\StructType;
 use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
- * This class stands for findRDVPointRetraitAcheminementResponse StructType
+ * This class stands for findRDVPointRetraitAcheminementByTokenResponse StructType
  * Meta information extracted from the WSDL
- * - type: tns:findRDVPointRetraitAcheminementResponse
+ * - type: tns:findRDVPointRetraitAcheminementByTokenResponse
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
-class FindRDVPointRetraitAcheminementResponse extends AbstractStructBase
+class FindRDVPointRetraitAcheminementByTokenResponse extends AbstractStructBase
 {
     /**
      * The return
@@ -21,8 +21,8 @@ class FindRDVPointRetraitAcheminementResponse extends AbstractStructBase
      */
     public $return;
     /**
-     * Constructor method for findRDVPointRetraitAcheminementResponse
-     * @uses FindRDVPointRetraitAcheminementResponse::setReturn()
+     * Constructor method for findRDVPointRetraitAcheminementByTokenResponse
+     * @uses FindRDVPointRetraitAcheminementByTokenResponse::setReturn()
      * @param \ColissimoPickupPoint\StructType\RdvPointRetraitAcheminementResult $return
      */
     public function __construct(\ColissimoPickupPoint\StructType\RdvPointRetraitAcheminementResult $return = null)
@@ -41,7 +41,7 @@ class FindRDVPointRetraitAcheminementResponse extends AbstractStructBase
     /**
      * Set return value
      * @param \ColissimoPickupPoint\StructType\RdvPointRetraitAcheminementResult $return
-     * @return \ColissimoPickupPoint\StructType\FindRDVPointRetraitAcheminementResponse
+     * @return \ColissimoPickupPoint\StructType\FindRDVPointRetraitAcheminementByTokenResponse
      */
     public function setReturn(\ColissimoPickupPoint\StructType\RdvPointRetraitAcheminementResult $return = null)
     {

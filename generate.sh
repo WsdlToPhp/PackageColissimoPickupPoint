@@ -14,7 +14,7 @@ rm -rf  $DEST/src/ \
         $DEST/composer.lock;
 
 # package informations
-php wsdltophp.phar generate:package \
+php-7.3 wsdltophp.phar generate:package \
     --urlorpath="https://ws.colissimo.fr/pointretrait-ws-cxf/PointRetraitServiceWS/2.0?wsdl" \
     --destination=$DEST \
     --composer-name="wsdltophp/package-colissimo-pickup-point" \
@@ -24,7 +24,7 @@ php wsdltophp.phar generate:package \
     --namespace="ColissimoPickupPoint";
 
 # generate package
-php wsdltophp.phar generate:package \
+php-7.3 wsdltophp.phar generate:package \
     --urlorpath="https://ws.colissimo.fr/pointretrait-ws-cxf/PointRetraitServiceWS/2.0?wsdl" \
     --destination=$DEST \
     --composer-name="wsdltophp/package-colissimo-pickup-point" \

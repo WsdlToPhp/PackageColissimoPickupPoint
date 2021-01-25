@@ -13,21 +13,21 @@ class PointRetraitAcheminement extends PointRetrait
 {
     /**
      * The distributionSort
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $distributionSort;
     /**
      * The lotAcheminement
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $lotAcheminement;
     /**
      * The versionPlanTri
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
@@ -65,7 +65,7 @@ class PointRetraitAcheminement extends PointRetrait
     {
         // validation for constraint: string
         if (!is_null($distributionSort) && !is_string($distributionSort)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($distributionSort)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($distributionSort, true), gettype($distributionSort)), __LINE__);
         }
         $this->distributionSort = $distributionSort;
         return $this;
@@ -87,7 +87,7 @@ class PointRetraitAcheminement extends PointRetrait
     {
         // validation for constraint: string
         if (!is_null($lotAcheminement) && !is_string($lotAcheminement)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($lotAcheminement)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($lotAcheminement, true), gettype($lotAcheminement)), __LINE__);
         }
         $this->lotAcheminement = $lotAcheminement;
         return $this;
@@ -109,29 +109,9 @@ class PointRetraitAcheminement extends PointRetrait
     {
         // validation for constraint: string
         if (!is_null($versionPlanTri) && !is_string($versionPlanTri)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($versionPlanTri)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($versionPlanTri, true), gettype($versionPlanTri)), __LINE__);
         }
         $this->versionPlanTri = $versionPlanTri;
         return $this;
-    }
-    /**
-     * Method called when an object has been exported with var_export() functions
-     * It allows to return an object instantiated with the values
-     * @see AbstractStructBase::__set_state()
-     * @uses AbstractStructBase::__set_state()
-     * @param array $array the exported values
-     * @return \ColissimoPickupPoint\StructType\PointRetraitAcheminement
-     */
-    public static function __set_state(array $array)
-    {
-        return parent::__set_state($array);
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }

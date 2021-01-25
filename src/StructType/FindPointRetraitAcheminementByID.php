@@ -6,7 +6,7 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for findPointRetraitAcheminementByID StructType
- * Meta informations extracted from the WSDL
+ * Meta information extracted from the WSDL
  * - type: tns:findPointRetraitAcheminementByID
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
@@ -15,56 +15,74 @@ class FindPointRetraitAcheminementByID extends AbstractStructBase
 {
     /**
      * The accountNumber
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $accountNumber;
     /**
      * The password
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $password;
     /**
+     * The apikey
+     * Meta information extracted from the WSDL
+     * - default:
+     * - minOccurs: 0
+     * - nillable: true
+     * @var string
+     */
+    public $apikey;
+    /**
+     * The codTiersPourPartenaire
+     * Meta information extracted from the WSDL
+     * - default:
+     * - minOccurs: 0
+     * - nillable: true
+     * @var string
+     */
+    public $codTiersPourPartenaire;
+    /**
      * The id
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $id;
     /**
      * The date
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $date;
     /**
      * The weight
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $weight;
     /**
      * The filterRelay
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $filterRelay;
     /**
      * The reseau
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $reseau;
     /**
      * The langue
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
@@ -73,6 +91,8 @@ class FindPointRetraitAcheminementByID extends AbstractStructBase
      * Constructor method for findPointRetraitAcheminementByID
      * @uses FindPointRetraitAcheminementByID::setAccountNumber()
      * @uses FindPointRetraitAcheminementByID::setPassword()
+     * @uses FindPointRetraitAcheminementByID::setApikey()
+     * @uses FindPointRetraitAcheminementByID::setCodTiersPourPartenaire()
      * @uses FindPointRetraitAcheminementByID::setId()
      * @uses FindPointRetraitAcheminementByID::setDate()
      * @uses FindPointRetraitAcheminementByID::setWeight()
@@ -81,6 +101,8 @@ class FindPointRetraitAcheminementByID extends AbstractStructBase
      * @uses FindPointRetraitAcheminementByID::setLangue()
      * @param string $accountNumber
      * @param string $password
+     * @param string $apikey
+     * @param string $codTiersPourPartenaire
      * @param string $id
      * @param string $date
      * @param string $weight
@@ -88,11 +110,13 @@ class FindPointRetraitAcheminementByID extends AbstractStructBase
      * @param string $reseau
      * @param string $langue
      */
-    public function __construct($accountNumber = null, $password = null, $id = null, $date = null, $weight = null, $filterRelay = null, $reseau = null, $langue = null)
+    public function __construct($accountNumber = null, $password = null, $apikey = '', $codTiersPourPartenaire = '', $id = null, $date = null, $weight = null, $filterRelay = null, $reseau = null, $langue = null)
     {
         $this
             ->setAccountNumber($accountNumber)
             ->setPassword($password)
+            ->setApikey($apikey)
+            ->setCodTiersPourPartenaire($codTiersPourPartenaire)
             ->setId($id)
             ->setDate($date)
             ->setWeight($weight)
@@ -117,7 +141,7 @@ class FindPointRetraitAcheminementByID extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($accountNumber) && !is_string($accountNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($accountNumber)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($accountNumber, true), gettype($accountNumber)), __LINE__);
         }
         $this->accountNumber = $accountNumber;
         return $this;
@@ -139,9 +163,71 @@ class FindPointRetraitAcheminementByID extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($password) && !is_string($password)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($password)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($password, true), gettype($password)), __LINE__);
         }
         $this->password = $password;
+        return $this;
+    }
+    /**
+     * Get apikey value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (nillable=true+minOccurs=0)
+     * @return string|null
+     */
+    public function getApikey()
+    {
+        return isset($this->apikey) ? $this->apikey : null;
+    }
+    /**
+     * Set apikey value
+     * This property is removable from request (nillable=true+minOccurs=0), therefore
+     * if the value assigned to this property is null, it is removed from this object
+     * @param string $apikey
+     * @return \ColissimoPickupPoint\StructType\FindPointRetraitAcheminementByID
+     */
+    public function setApikey($apikey = '')
+    {
+        // validation for constraint: string
+        if (!is_null($apikey) && !is_string($apikey)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($apikey, true), gettype($apikey)), __LINE__);
+        }
+        if (is_null($apikey) || (is_array($apikey) && empty($apikey))) {
+            unset($this->apikey);
+        } else {
+            $this->apikey = $apikey;
+        }
+        return $this;
+    }
+    /**
+     * Get codTiersPourPartenaire value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (nillable=true+minOccurs=0)
+     * @return string|null
+     */
+    public function getCodTiersPourPartenaire()
+    {
+        return isset($this->codTiersPourPartenaire) ? $this->codTiersPourPartenaire : null;
+    }
+    /**
+     * Set codTiersPourPartenaire value
+     * This property is removable from request (nillable=true+minOccurs=0), therefore
+     * if the value assigned to this property is null, it is removed from this object
+     * @param string $codTiersPourPartenaire
+     * @return \ColissimoPickupPoint\StructType\FindPointRetraitAcheminementByID
+     */
+    public function setCodTiersPourPartenaire($codTiersPourPartenaire = '')
+    {
+        // validation for constraint: string
+        if (!is_null($codTiersPourPartenaire) && !is_string($codTiersPourPartenaire)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($codTiersPourPartenaire, true), gettype($codTiersPourPartenaire)), __LINE__);
+        }
+        if (is_null($codTiersPourPartenaire) || (is_array($codTiersPourPartenaire) && empty($codTiersPourPartenaire))) {
+            unset($this->codTiersPourPartenaire);
+        } else {
+            $this->codTiersPourPartenaire = $codTiersPourPartenaire;
+        }
         return $this;
     }
     /**
@@ -161,7 +247,7 @@ class FindPointRetraitAcheminementByID extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($id) && !is_string($id)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($id)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($id, true), gettype($id)), __LINE__);
         }
         $this->id = $id;
         return $this;
@@ -183,7 +269,7 @@ class FindPointRetraitAcheminementByID extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($date) && !is_string($date)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($date)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($date, true), gettype($date)), __LINE__);
         }
         $this->date = $date;
         return $this;
@@ -205,7 +291,7 @@ class FindPointRetraitAcheminementByID extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($weight) && !is_string($weight)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($weight)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($weight, true), gettype($weight)), __LINE__);
         }
         $this->weight = $weight;
         return $this;
@@ -227,7 +313,7 @@ class FindPointRetraitAcheminementByID extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($filterRelay) && !is_string($filterRelay)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($filterRelay)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($filterRelay, true), gettype($filterRelay)), __LINE__);
         }
         $this->filterRelay = $filterRelay;
         return $this;
@@ -249,7 +335,7 @@ class FindPointRetraitAcheminementByID extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($reseau) && !is_string($reseau)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($reseau)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reseau, true), gettype($reseau)), __LINE__);
         }
         $this->reseau = $reseau;
         return $this;
@@ -271,29 +357,9 @@ class FindPointRetraitAcheminementByID extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($langue) && !is_string($langue)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($langue)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($langue, true), gettype($langue)), __LINE__);
         }
         $this->langue = $langue;
         return $this;
-    }
-    /**
-     * Method called when an object has been exported with var_export() functions
-     * It allows to return an object instantiated with the values
-     * @see AbstractStructBase::__set_state()
-     * @uses AbstractStructBase::__set_state()
-     * @param array $array the exported values
-     * @return \ColissimoPickupPoint\StructType\FindPointRetraitAcheminementByID
-     */
-    public static function __set_state(array $array)
-    {
-        return parent::__set_state($array);
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }
