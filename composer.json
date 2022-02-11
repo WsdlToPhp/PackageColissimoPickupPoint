@@ -2,15 +2,18 @@
     "name": "wsdltophp/package-colissimo-pickup-point",
     "description": "Package generated from https://ws.colissimo.fr/pointretrait-ws-cxf/PointRetraitServiceWS/2.0?wsdl using wsdltophp/packagegenerator",
     "require": {
-        "php": ">=5.3.3",
-        "ext-soap": "*",
+        "php": ">=7.4",
+        "ext-dom": "*",
         "ext-mbstring": "*",
-        "wsdltophp/packagebase": "~2.0"
+        "ext-soap": "*",
+        "wsdltophp/packagebase": "~5.0"
     },
     "autoload": {
         "psr-4": {
-            "ColissimoPickupPoint\\": "./src/",
+            "ColissimoPickupPoint\\": "./src/ColissimoPickupPoint",
             "SoapClient\\": "./SoapClient/"
         }
-    }
+    },
+    "type": "library",
+    "license": "MIT"
 }

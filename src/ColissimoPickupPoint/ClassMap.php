@@ -1,10 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ColissimoPickupPoint;
 
 /**
  * Class which returns the class map definition
- * @package
  */
 class ClassMap
 {
@@ -13,9 +14,9 @@ class ClassMap
      * This array is sent to the \SoapClient when calling the WS
      * @return string[]
      */
-    final public static function get()
+    final public static function get(): array
     {
-        return array(
+        return [
             'PointRetrait' => '\\ColissimoPickupPoint\\StructType\\PointRetrait',
             'Conges' => '\\ColissimoPickupPoint\\StructType\\Conges',
             'findRDVPointRetraitAcheminement' => '\\ColissimoPickupPoint\\StructType\\FindRDVPointRetraitAcheminement',
@@ -29,6 +30,6 @@ class ClassMap
             'findPointRetraitAcheminementByIDResponse' => '\\ColissimoPickupPoint\\StructType\\FindPointRetraitAcheminementByIDResponse',
             'pointRetraitAcheminementByIDResult' => '\\ColissimoPickupPoint\\StructType\\PointRetraitAcheminementByIDResult',
             'Exception' => '\\ColissimoPickupPoint\\StructType\\Exception',
-        );
+        ];
     }
 }

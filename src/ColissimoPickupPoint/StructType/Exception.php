@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ColissimoPickupPoint\StructType;
 
-use \WsdlToPhp\PackageBase\AbstractStructBase;
+use InvalidArgumentException;
+use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for Exception StructType
@@ -17,15 +20,15 @@ class Exception extends AbstractStructBase
      * The message
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public $message;
+    protected ?string $message = null;
     /**
      * Constructor method for Exception
      * @uses Exception::setMessage()
      * @param string $message
      */
-    public function __construct($message = null)
+    public function __construct(?string $message = null)
     {
         $this
             ->setMessage($message);
@@ -34,7 +37,7 @@ class Exception extends AbstractStructBase
      * Get message value
      * @return string|null
      */
-    public function getMessage()
+    public function getMessage(): ?string
     {
         return $this->message;
     }
@@ -43,13 +46,14 @@ class Exception extends AbstractStructBase
      * @param string $message
      * @return \ColissimoPickupPoint\StructType\Exception
      */
-    public function setMessage($message = null)
+    public function setMessage(?string $message = null): self
     {
         // validation for constraint: string
         if (!is_null($message) && !is_string($message)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($message, true), gettype($message)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($message, true), gettype($message)), __LINE__);
         }
         $this->message = $message;
+        
         return $this;
     }
 }

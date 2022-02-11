@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ColissimoPickupPoint\StructType;
 
-use \WsdlToPhp\PackageBase\AbstractStructBase;
+use InvalidArgumentException;
+use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for findPointRetraitAcheminementByIDResponse StructType
@@ -17,15 +20,15 @@ class FindPointRetraitAcheminementByIDResponse extends AbstractStructBase
      * The return
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var \ColissimoPickupPoint\StructType\PointRetraitAcheminementByIDResult
+     * @var \ColissimoPickupPoint\StructType\PointRetraitAcheminementByIDResult|null
      */
-    public $return;
+    protected ?\ColissimoPickupPoint\StructType\PointRetraitAcheminementByIDResult $return = null;
     /**
      * Constructor method for findPointRetraitAcheminementByIDResponse
      * @uses FindPointRetraitAcheminementByIDResponse::setReturn()
      * @param \ColissimoPickupPoint\StructType\PointRetraitAcheminementByIDResult $return
      */
-    public function __construct(\ColissimoPickupPoint\StructType\PointRetraitAcheminementByIDResult $return = null)
+    public function __construct(?\ColissimoPickupPoint\StructType\PointRetraitAcheminementByIDResult $return = null)
     {
         $this
             ->setReturn($return);
@@ -34,7 +37,7 @@ class FindPointRetraitAcheminementByIDResponse extends AbstractStructBase
      * Get return value
      * @return \ColissimoPickupPoint\StructType\PointRetraitAcheminementByIDResult|null
      */
-    public function getReturn()
+    public function getReturn(): ?\ColissimoPickupPoint\StructType\PointRetraitAcheminementByIDResult
     {
         return $this->return;
     }
@@ -43,9 +46,10 @@ class FindPointRetraitAcheminementByIDResponse extends AbstractStructBase
      * @param \ColissimoPickupPoint\StructType\PointRetraitAcheminementByIDResult $return
      * @return \ColissimoPickupPoint\StructType\FindPointRetraitAcheminementByIDResponse
      */
-    public function setReturn(\ColissimoPickupPoint\StructType\PointRetraitAcheminementByIDResult $return = null)
+    public function setReturn(?\ColissimoPickupPoint\StructType\PointRetraitAcheminementByIDResult $return = null): self
     {
         $this->return = $return;
+        
         return $this;
     }
 }

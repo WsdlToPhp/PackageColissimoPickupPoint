@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ColissimoPickupPoint\StructType;
 
-use \WsdlToPhp\PackageBase\AbstractStructBase;
+use InvalidArgumentException;
+use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for pointRetraitAcheminement StructType
@@ -15,23 +18,23 @@ class PointRetraitAcheminement extends PointRetrait
      * The distributionSort
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public $distributionSort;
+    protected ?string $distributionSort = null;
     /**
      * The lotAcheminement
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public $lotAcheminement;
+    protected ?string $lotAcheminement = null;
     /**
      * The versionPlanTri
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public $versionPlanTri;
+    protected ?string $versionPlanTri = null;
     /**
      * Constructor method for pointRetraitAcheminement
      * @uses PointRetraitAcheminement::setDistributionSort()
@@ -41,7 +44,7 @@ class PointRetraitAcheminement extends PointRetrait
      * @param string $lotAcheminement
      * @param string $versionPlanTri
      */
-    public function __construct($distributionSort = null, $lotAcheminement = null, $versionPlanTri = null)
+    public function __construct(?string $distributionSort = null, ?string $lotAcheminement = null, ?string $versionPlanTri = null)
     {
         $this
             ->setDistributionSort($distributionSort)
@@ -52,7 +55,7 @@ class PointRetraitAcheminement extends PointRetrait
      * Get distributionSort value
      * @return string|null
      */
-    public function getDistributionSort()
+    public function getDistributionSort(): ?string
     {
         return $this->distributionSort;
     }
@@ -61,20 +64,21 @@ class PointRetraitAcheminement extends PointRetrait
      * @param string $distributionSort
      * @return \ColissimoPickupPoint\StructType\PointRetraitAcheminement
      */
-    public function setDistributionSort($distributionSort = null)
+    public function setDistributionSort(?string $distributionSort = null): self
     {
         // validation for constraint: string
         if (!is_null($distributionSort) && !is_string($distributionSort)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($distributionSort, true), gettype($distributionSort)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($distributionSort, true), gettype($distributionSort)), __LINE__);
         }
         $this->distributionSort = $distributionSort;
+        
         return $this;
     }
     /**
      * Get lotAcheminement value
      * @return string|null
      */
-    public function getLotAcheminement()
+    public function getLotAcheminement(): ?string
     {
         return $this->lotAcheminement;
     }
@@ -83,20 +87,21 @@ class PointRetraitAcheminement extends PointRetrait
      * @param string $lotAcheminement
      * @return \ColissimoPickupPoint\StructType\PointRetraitAcheminement
      */
-    public function setLotAcheminement($lotAcheminement = null)
+    public function setLotAcheminement(?string $lotAcheminement = null): self
     {
         // validation for constraint: string
         if (!is_null($lotAcheminement) && !is_string($lotAcheminement)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($lotAcheminement, true), gettype($lotAcheminement)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($lotAcheminement, true), gettype($lotAcheminement)), __LINE__);
         }
         $this->lotAcheminement = $lotAcheminement;
+        
         return $this;
     }
     /**
      * Get versionPlanTri value
      * @return string|null
      */
-    public function getVersionPlanTri()
+    public function getVersionPlanTri(): ?string
     {
         return $this->versionPlanTri;
     }
@@ -105,13 +110,14 @@ class PointRetraitAcheminement extends PointRetrait
      * @param string $versionPlanTri
      * @return \ColissimoPickupPoint\StructType\PointRetraitAcheminement
      */
-    public function setVersionPlanTri($versionPlanTri = null)
+    public function setVersionPlanTri(?string $versionPlanTri = null): self
     {
         // validation for constraint: string
         if (!is_null($versionPlanTri) && !is_string($versionPlanTri)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($versionPlanTri, true), gettype($versionPlanTri)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($versionPlanTri, true), gettype($versionPlanTri)), __LINE__);
         }
         $this->versionPlanTri = $versionPlanTri;
+        
         return $this;
     }
 }

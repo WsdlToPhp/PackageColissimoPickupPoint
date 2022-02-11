@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ColissimoPickupPoint\StructType;
 
-use \WsdlToPhp\PackageBase\AbstractStructBase;
+use InvalidArgumentException;
+use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for findPointRetraitAcheminementByID StructType
@@ -17,76 +20,76 @@ class FindPointRetraitAcheminementByID extends AbstractStructBase
      * The accountNumber
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public $accountNumber;
+    protected ?string $accountNumber = null;
     /**
      * The password
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public $password;
+    protected ?string $password = null;
     /**
      * The apikey
      * Meta information extracted from the WSDL
      * - default:
      * - minOccurs: 0
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public $apikey;
+    protected ?string $apikey = null;
     /**
      * The codTiersPourPartenaire
      * Meta information extracted from the WSDL
      * - default:
      * - minOccurs: 0
      * - nillable: true
-     * @var string
+     * @var string|null
      */
-    public $codTiersPourPartenaire;
+    protected ?string $codTiersPourPartenaire = null;
     /**
      * The id
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public $id;
+    protected ?string $id = null;
     /**
      * The date
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public $date;
+    protected ?string $date = null;
     /**
      * The weight
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public $weight;
+    protected ?string $weight = null;
     /**
      * The filterRelay
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public $filterRelay;
+    protected ?string $filterRelay = null;
     /**
      * The reseau
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public $reseau;
+    protected ?string $reseau = null;
     /**
      * The langue
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public $langue;
+    protected ?string $langue = null;
     /**
      * Constructor method for findPointRetraitAcheminementByID
      * @uses FindPointRetraitAcheminementByID::setAccountNumber()
@@ -110,7 +113,7 @@ class FindPointRetraitAcheminementByID extends AbstractStructBase
      * @param string $reseau
      * @param string $langue
      */
-    public function __construct($accountNumber = null, $password = null, $apikey = '', $codTiersPourPartenaire = '', $id = null, $date = null, $weight = null, $filterRelay = null, $reseau = null, $langue = null)
+    public function __construct(?string $accountNumber = null, ?string $password = null, ?string $apikey = '', ?string $codTiersPourPartenaire = '', ?string $id = null, ?string $date = null, ?string $weight = null, ?string $filterRelay = null, ?string $reseau = null, ?string $langue = null)
     {
         $this
             ->setAccountNumber($accountNumber)
@@ -128,7 +131,7 @@ class FindPointRetraitAcheminementByID extends AbstractStructBase
      * Get accountNumber value
      * @return string|null
      */
-    public function getAccountNumber()
+    public function getAccountNumber(): ?string
     {
         return $this->accountNumber;
     }
@@ -137,20 +140,21 @@ class FindPointRetraitAcheminementByID extends AbstractStructBase
      * @param string $accountNumber
      * @return \ColissimoPickupPoint\StructType\FindPointRetraitAcheminementByID
      */
-    public function setAccountNumber($accountNumber = null)
+    public function setAccountNumber(?string $accountNumber = null): self
     {
         // validation for constraint: string
         if (!is_null($accountNumber) && !is_string($accountNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($accountNumber, true), gettype($accountNumber)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($accountNumber, true), gettype($accountNumber)), __LINE__);
         }
         $this->accountNumber = $accountNumber;
+        
         return $this;
     }
     /**
      * Get password value
      * @return string|null
      */
-    public function getPassword()
+    public function getPassword(): ?string
     {
         return $this->password;
     }
@@ -159,13 +163,14 @@ class FindPointRetraitAcheminementByID extends AbstractStructBase
      * @param string $password
      * @return \ColissimoPickupPoint\StructType\FindPointRetraitAcheminementByID
      */
-    public function setPassword($password = null)
+    public function setPassword(?string $password = null): self
     {
         // validation for constraint: string
         if (!is_null($password) && !is_string($password)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($password, true), gettype($password)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($password, true), gettype($password)), __LINE__);
         }
         $this->password = $password;
+        
         return $this;
     }
     /**
@@ -175,7 +180,7 @@ class FindPointRetraitAcheminementByID extends AbstractStructBase
      * removable from the request (nillable=true+minOccurs=0)
      * @return string|null
      */
-    public function getApikey()
+    public function getApikey(): ?string
     {
         return isset($this->apikey) ? $this->apikey : null;
     }
@@ -186,17 +191,18 @@ class FindPointRetraitAcheminementByID extends AbstractStructBase
      * @param string $apikey
      * @return \ColissimoPickupPoint\StructType\FindPointRetraitAcheminementByID
      */
-    public function setApikey($apikey = '')
+    public function setApikey(?string $apikey = ''): self
     {
         // validation for constraint: string
         if (!is_null($apikey) && !is_string($apikey)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($apikey, true), gettype($apikey)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($apikey, true), gettype($apikey)), __LINE__);
         }
         if (is_null($apikey) || (is_array($apikey) && empty($apikey))) {
             unset($this->apikey);
         } else {
             $this->apikey = $apikey;
         }
+        
         return $this;
     }
     /**
@@ -206,7 +212,7 @@ class FindPointRetraitAcheminementByID extends AbstractStructBase
      * removable from the request (nillable=true+minOccurs=0)
      * @return string|null
      */
-    public function getCodTiersPourPartenaire()
+    public function getCodTiersPourPartenaire(): ?string
     {
         return isset($this->codTiersPourPartenaire) ? $this->codTiersPourPartenaire : null;
     }
@@ -217,24 +223,25 @@ class FindPointRetraitAcheminementByID extends AbstractStructBase
      * @param string $codTiersPourPartenaire
      * @return \ColissimoPickupPoint\StructType\FindPointRetraitAcheminementByID
      */
-    public function setCodTiersPourPartenaire($codTiersPourPartenaire = '')
+    public function setCodTiersPourPartenaire(?string $codTiersPourPartenaire = ''): self
     {
         // validation for constraint: string
         if (!is_null($codTiersPourPartenaire) && !is_string($codTiersPourPartenaire)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($codTiersPourPartenaire, true), gettype($codTiersPourPartenaire)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($codTiersPourPartenaire, true), gettype($codTiersPourPartenaire)), __LINE__);
         }
         if (is_null($codTiersPourPartenaire) || (is_array($codTiersPourPartenaire) && empty($codTiersPourPartenaire))) {
             unset($this->codTiersPourPartenaire);
         } else {
             $this->codTiersPourPartenaire = $codTiersPourPartenaire;
         }
+        
         return $this;
     }
     /**
      * Get id value
      * @return string|null
      */
-    public function getId()
+    public function getId(): ?string
     {
         return $this->id;
     }
@@ -243,20 +250,21 @@ class FindPointRetraitAcheminementByID extends AbstractStructBase
      * @param string $id
      * @return \ColissimoPickupPoint\StructType\FindPointRetraitAcheminementByID
      */
-    public function setId($id = null)
+    public function setId(?string $id = null): self
     {
         // validation for constraint: string
         if (!is_null($id) && !is_string($id)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($id, true), gettype($id)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($id, true), gettype($id)), __LINE__);
         }
         $this->id = $id;
+        
         return $this;
     }
     /**
      * Get date value
      * @return string|null
      */
-    public function getDate()
+    public function getDate(): ?string
     {
         return $this->date;
     }
@@ -265,20 +273,21 @@ class FindPointRetraitAcheminementByID extends AbstractStructBase
      * @param string $date
      * @return \ColissimoPickupPoint\StructType\FindPointRetraitAcheminementByID
      */
-    public function setDate($date = null)
+    public function setDate(?string $date = null): self
     {
         // validation for constraint: string
         if (!is_null($date) && !is_string($date)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($date, true), gettype($date)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($date, true), gettype($date)), __LINE__);
         }
         $this->date = $date;
+        
         return $this;
     }
     /**
      * Get weight value
      * @return string|null
      */
-    public function getWeight()
+    public function getWeight(): ?string
     {
         return $this->weight;
     }
@@ -287,20 +296,21 @@ class FindPointRetraitAcheminementByID extends AbstractStructBase
      * @param string $weight
      * @return \ColissimoPickupPoint\StructType\FindPointRetraitAcheminementByID
      */
-    public function setWeight($weight = null)
+    public function setWeight(?string $weight = null): self
     {
         // validation for constraint: string
         if (!is_null($weight) && !is_string($weight)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($weight, true), gettype($weight)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($weight, true), gettype($weight)), __LINE__);
         }
         $this->weight = $weight;
+        
         return $this;
     }
     /**
      * Get filterRelay value
      * @return string|null
      */
-    public function getFilterRelay()
+    public function getFilterRelay(): ?string
     {
         return $this->filterRelay;
     }
@@ -309,20 +319,21 @@ class FindPointRetraitAcheminementByID extends AbstractStructBase
      * @param string $filterRelay
      * @return \ColissimoPickupPoint\StructType\FindPointRetraitAcheminementByID
      */
-    public function setFilterRelay($filterRelay = null)
+    public function setFilterRelay(?string $filterRelay = null): self
     {
         // validation for constraint: string
         if (!is_null($filterRelay) && !is_string($filterRelay)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($filterRelay, true), gettype($filterRelay)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($filterRelay, true), gettype($filterRelay)), __LINE__);
         }
         $this->filterRelay = $filterRelay;
+        
         return $this;
     }
     /**
      * Get reseau value
      * @return string|null
      */
-    public function getReseau()
+    public function getReseau(): ?string
     {
         return $this->reseau;
     }
@@ -331,20 +342,21 @@ class FindPointRetraitAcheminementByID extends AbstractStructBase
      * @param string $reseau
      * @return \ColissimoPickupPoint\StructType\FindPointRetraitAcheminementByID
      */
-    public function setReseau($reseau = null)
+    public function setReseau(?string $reseau = null): self
     {
         // validation for constraint: string
         if (!is_null($reseau) && !is_string($reseau)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reseau, true), gettype($reseau)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reseau, true), gettype($reseau)), __LINE__);
         }
         $this->reseau = $reseau;
+        
         return $this;
     }
     /**
      * Get langue value
      * @return string|null
      */
-    public function getLangue()
+    public function getLangue(): ?string
     {
         return $this->langue;
     }
@@ -353,13 +365,14 @@ class FindPointRetraitAcheminementByID extends AbstractStructBase
      * @param string $langue
      * @return \ColissimoPickupPoint\StructType\FindPointRetraitAcheminementByID
      */
-    public function setLangue($langue = null)
+    public function setLangue(?string $langue = null): self
     {
         // validation for constraint: string
         if (!is_null($langue) && !is_string($langue)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($langue, true), gettype($langue)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($langue, true), gettype($langue)), __LINE__);
         }
         $this->langue = $langue;
+        
         return $this;
     }
 }

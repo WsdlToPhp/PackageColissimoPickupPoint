@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ColissimoPickupPoint\ServiceType;
 
-use \SoapClient\SoapClientBase;
+use SoapFault;
+use SoapClient\SoapClientBase;
 
 /**
  * This class stands for Find ServiceType
@@ -15,7 +18,6 @@ class Find extends SoapClientBase
      * Method to call the operation originally named findRDVPointRetraitAcheminement
      * @uses SoapClientBase::getSoapClient()
      * @uses SoapClientBase::setResult()
-     * @uses SoapClientBase::getResult()
      * @uses SoapClientBase::saveLastError()
      * @param \ColissimoPickupPoint\StructType\FindRDVPointRetraitAcheminement $parameters
      * @return \ColissimoPickupPoint\StructType\FindRDVPointRetraitAcheminementResponse|bool
@@ -23,12 +25,14 @@ class Find extends SoapClientBase
     public function findRDVPointRetraitAcheminement(\ColissimoPickupPoint\StructType\FindRDVPointRetraitAcheminement $parameters)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('findRDVPointRetraitAcheminement', array(
+            $this->setResult($resultFindRDVPointRetraitAcheminement = $this->getSoapClient()->__soapCall('findRDVPointRetraitAcheminement', [
                 $parameters,
-            ), array(), array(), $this->outputHeaders));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
+            ], [], [], $this->outputHeaders));
+        
+            return $resultFindRDVPointRetraitAcheminement;
+        } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
+        
             return false;
         }
     }
@@ -37,7 +41,6 @@ class Find extends SoapClientBase
      * findRDVPointRetraitAcheminementByToken
      * @uses SoapClientBase::getSoapClient()
      * @uses SoapClientBase::setResult()
-     * @uses SoapClientBase::getResult()
      * @uses SoapClientBase::saveLastError()
      * @param \ColissimoPickupPoint\StructType\FindRDVPointRetraitAcheminementByToken $parameters
      * @return \ColissimoPickupPoint\StructType\FindRDVPointRetraitAcheminementByTokenResponse|bool
@@ -45,12 +48,14 @@ class Find extends SoapClientBase
     public function findRDVPointRetraitAcheminementByToken(\ColissimoPickupPoint\StructType\FindRDVPointRetraitAcheminementByToken $parameters)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('findRDVPointRetraitAcheminementByToken', array(
+            $this->setResult($resultFindRDVPointRetraitAcheminementByToken = $this->getSoapClient()->__soapCall('findRDVPointRetraitAcheminementByToken', [
                 $parameters,
-            ), array(), array(), $this->outputHeaders));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
+            ], [], [], $this->outputHeaders));
+        
+            return $resultFindRDVPointRetraitAcheminementByToken;
+        } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
+        
             return false;
         }
     }
@@ -58,7 +63,6 @@ class Find extends SoapClientBase
      * Method to call the operation originally named findPointRetraitAcheminementByID
      * @uses SoapClientBase::getSoapClient()
      * @uses SoapClientBase::setResult()
-     * @uses SoapClientBase::getResult()
      * @uses SoapClientBase::saveLastError()
      * @param \ColissimoPickupPoint\StructType\FindPointRetraitAcheminementByID $parameters
      * @return \ColissimoPickupPoint\StructType\FindPointRetraitAcheminementByIDResponse|bool
@@ -66,12 +70,14 @@ class Find extends SoapClientBase
     public function findPointRetraitAcheminementByID(\ColissimoPickupPoint\StructType\FindPointRetraitAcheminementByID $parameters)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('findPointRetraitAcheminementByID', array(
+            $this->setResult($resultFindPointRetraitAcheminementByID = $this->getSoapClient()->__soapCall('findPointRetraitAcheminementByID', [
                 $parameters,
-            ), array(), array(), $this->outputHeaders));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
+            ], [], [], $this->outputHeaders));
+        
+            return $resultFindPointRetraitAcheminementByID;
+        } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
+        
             return false;
         }
     }

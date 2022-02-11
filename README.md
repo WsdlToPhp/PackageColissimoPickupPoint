@@ -1,4 +1,5 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/WsdlToPhp/PackageColissimoPickupPoint/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/WsdlToPhp/PackageColissimoPickupPoint/?branch=develop)
+[![TeamCity build status](https://teamcity.mikael-delsol.fr/app/rest/builds/buildType:id:PackageColissimoPickupPoint_Build/statusIcon.svg)](https://github.com/WsdlToPhp/PackageColissimoPickupPoint)
 [![Latest Stable Version](https://poser.pugx.org/wsdltophp/package-colissimo-pickup-point/v/stable)](https://packagist.org/packages/wsdltophp/package-colissimo-pickup-point)
 [![Dependency Status](https://www.versioneye.com/user/projects/570e03c2fcd19a0045440bfe/badge.svg?style=flat)](https://www.versioneye.com/user/projects/570e03c2fcd19a0045440bfe)
 [![StyleCI](https://styleci.io/repos/56134458/shield)](https://styleci.io/repos/56134458)

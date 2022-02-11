@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ColissimoPickupPoint\StructType;
 
-use \WsdlToPhp\PackageBase\AbstractStructBase;
+use InvalidArgumentException;
+use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for pointRetraitAcheminementResult StructType
@@ -13,16 +16,16 @@ class PointRetraitAcheminementResult extends AbstractStructBase
 {
     /**
      * The errorCode
-     * @var int
+     * @var int|null
      */
-    public $errorCode;
+    protected ?int $errorCode = null;
     /**
      * The errorMessage
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public $errorMessage;
+    protected ?string $errorMessage = null;
     /**
      * The listePointRetraitAcheminement
      * Meta information extracted from the WSDL
@@ -31,19 +34,19 @@ class PointRetraitAcheminementResult extends AbstractStructBase
      * - nillable: true
      * @var \ColissimoPickupPoint\StructType\PointRetraitAcheminement[]
      */
-    public $listePointRetraitAcheminement;
+    protected ?array $listePointRetraitAcheminement = null;
     /**
      * The qualiteReponse
-     * @var int
+     * @var int|null
      */
-    public $qualiteReponse;
+    protected ?int $qualiteReponse = null;
     /**
      * The wsRequestId
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public $wsRequestId;
+    protected ?string $wsRequestId = null;
     /**
      * Constructor method for pointRetraitAcheminementResult
      * @uses PointRetraitAcheminementResult::setErrorCode()
@@ -57,7 +60,7 @@ class PointRetraitAcheminementResult extends AbstractStructBase
      * @param int $qualiteReponse
      * @param string $wsRequestId
      */
-    public function __construct($errorCode = null, $errorMessage = null, array $listePointRetraitAcheminement = array(), $qualiteReponse = null, $wsRequestId = null)
+    public function __construct(?int $errorCode = null, ?string $errorMessage = null, ?array $listePointRetraitAcheminement = null, ?int $qualiteReponse = null, ?string $wsRequestId = null)
     {
         $this
             ->setErrorCode($errorCode)
@@ -70,7 +73,7 @@ class PointRetraitAcheminementResult extends AbstractStructBase
      * Get errorCode value
      * @return int|null
      */
-    public function getErrorCode()
+    public function getErrorCode(): ?int
     {
         return $this->errorCode;
     }
@@ -79,20 +82,21 @@ class PointRetraitAcheminementResult extends AbstractStructBase
      * @param int $errorCode
      * @return \ColissimoPickupPoint\StructType\PointRetraitAcheminementResult
      */
-    public function setErrorCode($errorCode = null)
+    public function setErrorCode(?int $errorCode = null): self
     {
         // validation for constraint: int
         if (!is_null($errorCode) && !(is_int($errorCode) || ctype_digit($errorCode))) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($errorCode, true), gettype($errorCode)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($errorCode, true), gettype($errorCode)), __LINE__);
         }
         $this->errorCode = $errorCode;
+        
         return $this;
     }
     /**
      * Get errorMessage value
      * @return string|null
      */
-    public function getErrorMessage()
+    public function getErrorMessage(): ?string
     {
         return $this->errorMessage;
     }
@@ -101,13 +105,14 @@ class PointRetraitAcheminementResult extends AbstractStructBase
      * @param string $errorMessage
      * @return \ColissimoPickupPoint\StructType\PointRetraitAcheminementResult
      */
-    public function setErrorMessage($errorMessage = null)
+    public function setErrorMessage(?string $errorMessage = null): self
     {
         // validation for constraint: string
         if (!is_null($errorMessage) && !is_string($errorMessage)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($errorMessage, true), gettype($errorMessage)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($errorMessage, true), gettype($errorMessage)), __LINE__);
         }
         $this->errorMessage = $errorMessage;
+        
         return $this;
     }
     /**
@@ -115,9 +120,9 @@ class PointRetraitAcheminementResult extends AbstractStructBase
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \ColissimoPickupPoint\StructType\PointRetraitAcheminement[]|null
+     * @return \ColissimoPickupPoint\StructType\PointRetraitAcheminement[]
      */
-    public function getListePointRetraitAcheminement()
+    public function getListePointRetraitAcheminement(): ?array
     {
         return isset($this->listePointRetraitAcheminement) ? $this->listePointRetraitAcheminement : null;
     }
@@ -127,8 +132,11 @@ class PointRetraitAcheminementResult extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateListePointRetraitAcheminementForArrayConstraintsFromSetListePointRetraitAcheminement(array $values = array())
+    public static function validateListePointRetraitAcheminementForArrayConstraintsFromSetListePointRetraitAcheminement(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $pointRetraitAcheminementResultListePointRetraitAcheminementItem) {
@@ -141,49 +149,52 @@ class PointRetraitAcheminementResult extends AbstractStructBase
             $message = sprintf('The listePointRetraitAcheminement property can only contain items of type \ColissimoPickupPoint\StructType\PointRetraitAcheminement, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
+        
         return $message;
     }
     /**
      * Set listePointRetraitAcheminement value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \ColissimoPickupPoint\StructType\PointRetraitAcheminement[] $listePointRetraitAcheminement
      * @return \ColissimoPickupPoint\StructType\PointRetraitAcheminementResult
      */
-    public function setListePointRetraitAcheminement(array $listePointRetraitAcheminement = array())
+    public function setListePointRetraitAcheminement(?array $listePointRetraitAcheminement = null): self
     {
         // validation for constraint: array
         if ('' !== ($listePointRetraitAcheminementArrayErrorMessage = self::validateListePointRetraitAcheminementForArrayConstraintsFromSetListePointRetraitAcheminement($listePointRetraitAcheminement))) {
-            throw new \InvalidArgumentException($listePointRetraitAcheminementArrayErrorMessage, __LINE__);
+            throw new InvalidArgumentException($listePointRetraitAcheminementArrayErrorMessage, __LINE__);
         }
         if (is_null($listePointRetraitAcheminement) || (is_array($listePointRetraitAcheminement) && empty($listePointRetraitAcheminement))) {
             unset($this->listePointRetraitAcheminement);
         } else {
             $this->listePointRetraitAcheminement = $listePointRetraitAcheminement;
         }
+        
         return $this;
     }
     /**
      * Add item to listePointRetraitAcheminement value
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      * @param \ColissimoPickupPoint\StructType\PointRetraitAcheminement $item
      * @return \ColissimoPickupPoint\StructType\PointRetraitAcheminementResult
      */
-    public function addToListePointRetraitAcheminement(\ColissimoPickupPoint\StructType\PointRetraitAcheminement $item)
+    public function addToListePointRetraitAcheminement(\ColissimoPickupPoint\StructType\PointRetraitAcheminement $item): self
     {
         // validation for constraint: itemType
         if (!$item instanceof \ColissimoPickupPoint\StructType\PointRetraitAcheminement) {
-            throw new \InvalidArgumentException(sprintf('The listePointRetraitAcheminement property can only contain items of type \ColissimoPickupPoint\StructType\PointRetraitAcheminement, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+            throw new InvalidArgumentException(sprintf('The listePointRetraitAcheminement property can only contain items of type \ColissimoPickupPoint\StructType\PointRetraitAcheminement, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->listePointRetraitAcheminement[] = $item;
+        
         return $this;
     }
     /**
      * Get qualiteReponse value
      * @return int|null
      */
-    public function getQualiteReponse()
+    public function getQualiteReponse(): ?int
     {
         return $this->qualiteReponse;
     }
@@ -192,20 +203,21 @@ class PointRetraitAcheminementResult extends AbstractStructBase
      * @param int $qualiteReponse
      * @return \ColissimoPickupPoint\StructType\PointRetraitAcheminementResult
      */
-    public function setQualiteReponse($qualiteReponse = null)
+    public function setQualiteReponse(?int $qualiteReponse = null): self
     {
         // validation for constraint: int
         if (!is_null($qualiteReponse) && !(is_int($qualiteReponse) || ctype_digit($qualiteReponse))) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($qualiteReponse, true), gettype($qualiteReponse)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($qualiteReponse, true), gettype($qualiteReponse)), __LINE__);
         }
         $this->qualiteReponse = $qualiteReponse;
+        
         return $this;
     }
     /**
      * Get wsRequestId value
      * @return string|null
      */
-    public function getWsRequestId()
+    public function getWsRequestId(): ?string
     {
         return $this->wsRequestId;
     }
@@ -214,13 +226,14 @@ class PointRetraitAcheminementResult extends AbstractStructBase
      * @param string $wsRequestId
      * @return \ColissimoPickupPoint\StructType\PointRetraitAcheminementResult
      */
-    public function setWsRequestId($wsRequestId = null)
+    public function setWsRequestId(?string $wsRequestId = null): self
     {
         // validation for constraint: string
         if (!is_null($wsRequestId) && !is_string($wsRequestId)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($wsRequestId, true), gettype($wsRequestId)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($wsRequestId, true), gettype($wsRequestId)), __LINE__);
         }
         $this->wsRequestId = $wsRequestId;
+        
         return $this;
     }
 }

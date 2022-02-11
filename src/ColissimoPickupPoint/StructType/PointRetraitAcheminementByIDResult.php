@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ColissimoPickupPoint\StructType;
 
-use \WsdlToPhp\PackageBase\AbstractStructBase;
+use InvalidArgumentException;
+use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for pointRetraitAcheminementByIDResult StructType
@@ -13,23 +16,23 @@ class PointRetraitAcheminementByIDResult extends AbstractStructBase
 {
     /**
      * The errorCode
-     * @var int
+     * @var int|null
      */
-    public $errorCode;
+    protected ?int $errorCode = null;
     /**
      * The errorMessage
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public $errorMessage;
+    protected ?string $errorMessage = null;
     /**
      * The pointRetraitAcheminement
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var \ColissimoPickupPoint\StructType\PointRetraitAcheminement
+     * @var \ColissimoPickupPoint\StructType\PointRetraitAcheminement|null
      */
-    public $pointRetraitAcheminement;
+    protected ?\ColissimoPickupPoint\StructType\PointRetraitAcheminement $pointRetraitAcheminement = null;
     /**
      * Constructor method for pointRetraitAcheminementByIDResult
      * @uses PointRetraitAcheminementByIDResult::setErrorCode()
@@ -39,7 +42,7 @@ class PointRetraitAcheminementByIDResult extends AbstractStructBase
      * @param string $errorMessage
      * @param \ColissimoPickupPoint\StructType\PointRetraitAcheminement $pointRetraitAcheminement
      */
-    public function __construct($errorCode = null, $errorMessage = null, \ColissimoPickupPoint\StructType\PointRetraitAcheminement $pointRetraitAcheminement = null)
+    public function __construct(?int $errorCode = null, ?string $errorMessage = null, ?\ColissimoPickupPoint\StructType\PointRetraitAcheminement $pointRetraitAcheminement = null)
     {
         $this
             ->setErrorCode($errorCode)
@@ -50,7 +53,7 @@ class PointRetraitAcheminementByIDResult extends AbstractStructBase
      * Get errorCode value
      * @return int|null
      */
-    public function getErrorCode()
+    public function getErrorCode(): ?int
     {
         return $this->errorCode;
     }
@@ -59,20 +62,21 @@ class PointRetraitAcheminementByIDResult extends AbstractStructBase
      * @param int $errorCode
      * @return \ColissimoPickupPoint\StructType\PointRetraitAcheminementByIDResult
      */
-    public function setErrorCode($errorCode = null)
+    public function setErrorCode(?int $errorCode = null): self
     {
         // validation for constraint: int
         if (!is_null($errorCode) && !(is_int($errorCode) || ctype_digit($errorCode))) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($errorCode, true), gettype($errorCode)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($errorCode, true), gettype($errorCode)), __LINE__);
         }
         $this->errorCode = $errorCode;
+        
         return $this;
     }
     /**
      * Get errorMessage value
      * @return string|null
      */
-    public function getErrorMessage()
+    public function getErrorMessage(): ?string
     {
         return $this->errorMessage;
     }
@@ -81,20 +85,21 @@ class PointRetraitAcheminementByIDResult extends AbstractStructBase
      * @param string $errorMessage
      * @return \ColissimoPickupPoint\StructType\PointRetraitAcheminementByIDResult
      */
-    public function setErrorMessage($errorMessage = null)
+    public function setErrorMessage(?string $errorMessage = null): self
     {
         // validation for constraint: string
         if (!is_null($errorMessage) && !is_string($errorMessage)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($errorMessage, true), gettype($errorMessage)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($errorMessage, true), gettype($errorMessage)), __LINE__);
         }
         $this->errorMessage = $errorMessage;
+        
         return $this;
     }
     /**
      * Get pointRetraitAcheminement value
      * @return \ColissimoPickupPoint\StructType\PointRetraitAcheminement|null
      */
-    public function getPointRetraitAcheminement()
+    public function getPointRetraitAcheminement(): ?\ColissimoPickupPoint\StructType\PointRetraitAcheminement
     {
         return $this->pointRetraitAcheminement;
     }
@@ -103,9 +108,10 @@ class PointRetraitAcheminementByIDResult extends AbstractStructBase
      * @param \ColissimoPickupPoint\StructType\PointRetraitAcheminement $pointRetraitAcheminement
      * @return \ColissimoPickupPoint\StructType\PointRetraitAcheminementByIDResult
      */
-    public function setPointRetraitAcheminement(\ColissimoPickupPoint\StructType\PointRetraitAcheminement $pointRetraitAcheminement = null)
+    public function setPointRetraitAcheminement(?\ColissimoPickupPoint\StructType\PointRetraitAcheminement $pointRetraitAcheminement = null): self
     {
         $this->pointRetraitAcheminement = $pointRetraitAcheminement;
+        
         return $this;
     }
 }
